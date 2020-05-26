@@ -1,0 +1,19 @@
+$colors: (
+  white: #fff,
+  black: #000,
+  orange: #ffb53a,
+  grey: #262626,
+  darkGray: rgba(38, 38, 38, 0.1)
+);
+
+@mixin color-modifiers {
+  @each $name, $hex in $colors {
+    &_color_#{$name} {
+      color: $hex;
+    }
+  }
+}
+
+$navigationActiveLink: map_get($colors, orange);
+$placeholder: map_get($colors, gray);
+$border: map_get($colors, darkGray)

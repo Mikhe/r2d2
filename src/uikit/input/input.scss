@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+
+$size: 24px;
+$border-width: 1px;
+
+.input {
+  > input {
+    border-radius: 5px;
+    height: calc(#{$size - #{$border-width} * 2});
+    border: 1px solid $border;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 17px;
+    color: $placeholder;
+  }
+
+  &_icon {
+    > input {
+      padding-right: 45px;
+    }
+
+    > img {
+      position: relative;
+      left: -45px;
+      top: 6px;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    opacity: 0.6;
+    font-size: 17px;
+    color: $placeholder;
+  }
+  ::-moz-placeholder {
+    opacity: 0.6;
+    font-size: 17px;
+    color: $placeholder;
+  }
+  :-ms-input-placeholder {
+    opacity: 0.6;
+    font-size: 17px;
+    color: $placeholder;
+  }
+  :-moz-placeholder {
+    opacity: 0.6;
+    font-size: 17px;
+    color: $placeholder;
+  }
+}

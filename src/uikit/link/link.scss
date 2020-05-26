@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.link {
+  @include color-modifiers;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
