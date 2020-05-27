@@ -1,9 +1,9 @@
-import {action, decorate, observable, autorun } from 'mobx';
+import { action, decorate, observable, autorun, runInAction } from 'mobx';
 import { debounce } from 'debounce';
 
 import { api } from '../api';
 
-class DishesStore {
+export class DishesStore {
     pageSize = 6;
     page = 0;
     dishes = [];
@@ -49,7 +49,9 @@ class DishesStore {
             if (search) {
                 let foundDishes = await api.searchDish(search);
 
-                this.foundDishes = this.countKCL(foundDishes);
+                runInAction(() => {
+                    this.foundDishes = this.countKCL(foundDishes);
+                })
             }
         } catch(e) {
             console.error(e);
