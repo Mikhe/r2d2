@@ -115,17 +115,23 @@ class API {
     searchDish(search) {
         return new Promise((resolve) => {
             setTimeout(() => {
-                const searchBy = search.toLowerCase();
+                const searchBy = search.toLowerCase().split(' ');
 
                 resolve(this.dishes.filter(dish => {
-                    const inTitle = dish.title.toLocaleLowerCase().includes(searchBy);
+                    let match = false;
 
-                    if (inTitle) {
+                    searchBy.some(keyword => {
+                        return match = dish.title.toLocaleLowerCase().includes(keyword);
+                    });
+
+                    if (match) {
                         return true;
                     }
 
                     return !!dish.ingredients.filter(ingredient => {
-                        return ingredient.name.toLowerCase().includes(searchBy);
+                        searchBy.some(keyword => {
+                            return match = ingredient.name.toLocaleLowerCase().includes(keyword);
+                        });
                     }).length
                 }));
             }, timeout);
