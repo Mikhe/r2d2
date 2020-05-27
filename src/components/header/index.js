@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './header.scss';
+import './styles/header.scss';
 import HeaderBar from './header-bar';
 
 function Header({ navigationItems }) {

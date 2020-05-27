@@ -15,7 +15,7 @@ function HeaderBar({ navigationItems }) {
 
             <nav className="header-bar-navigation">
                 {navigationItems.map(({ page, active }) => (
-                    <HeaderBarLink text={page} active={active} />
+                    <HeaderBarLink text={page} active={active} key={page} />
                 ))}
             </nav>
 

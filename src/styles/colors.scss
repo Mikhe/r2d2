@@ -3,7 +3,8 @@ $colors: (
   black: #000,
   orange: #ffb53a,
   grey: #262626,
-  darkGray: rgba(38, 38, 38, 0.1)
+  darkGray: rgba(38, 38, 38, 0.1),
+  graphite: #2e3b50,
 );
 
 @mixin color-modifiers {

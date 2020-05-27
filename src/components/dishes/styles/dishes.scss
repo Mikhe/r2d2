@@ -1,0 +1,98 @@
+@import '../../../styles/colors';
+
+.dish-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 957px;
+  justify-content: space-between;
+  margin: 30px auto 0;
+
+  &-item {
+    display: flex;
+    background: map_get($colors, white);
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 305px;
+    color: map_get($colors, graphite);
+
+    > img {
+      width: 305px;
+      height: 180px;
+      border-radius: 10px;
+    }
+
+    &-content {
+      display: flex;
+    }
+
+    &-container {
+      padding: 20px 30px 8px 15px;
+      width: 246px;
+    }
+
+    &-sticker {
+      width: 15px;
+      height: 4px;
+      margin-top: 52px;
+      background-color: map_get($colors, orange);
+    }
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    &-body {
+      margin-top: 10px;
+    }
+
+    &-title {
+      font-size: 17px;
+      font-weight: bold;
+      height: 66px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-height: 21px;
+    }
+
+    &-description {
+      margin-top: 20px;
+      font-size: 14px;
+      height: 54px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    &-price {
+      display: flex;
+      font-size: 17px;
+
+      &-currency {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    &-people {
+      font-size: 14px;
+      width: 55px;
+      text-align: right;
+      line-height: 22px;
+    }
+  }
+}
