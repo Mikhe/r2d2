@@ -5,5 +5,5 @@ import Icon from './icon';
 export {
     Link,
     Input,
-    Icon
+    Icon,
 }

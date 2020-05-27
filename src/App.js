@@ -11,14 +11,14 @@ const navigationItems = [
 ];
 
 function App() {
-  return (
-    <div className="app">
-      <main className="main">
-        <Header navigationItems={navigationItems} />
-        <Dishes />
-      </main>
-    </div>
-  );
+    return (
+        <div className="app">
+            <main className="main">
+                <Header navigationItems={navigationItems} />
+                <Dishes />
+            </main>
+        </div>
+    );
 }
 
 export default App;
