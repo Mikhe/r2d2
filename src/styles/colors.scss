@@ -15,6 +15,14 @@ $colors: (
   }
 }
 
+@mixin background-modifiers {
+  @each $name, $hex in $colors {
+    &_color_#{$name} {
+      background-color: $hex;
+    }
+  }
+}
+
 $navigationActiveLink: map_get($colors, orange);
 $placeholder: map_get($colors, gray);
 $border: map_get($colors, darkGray)
