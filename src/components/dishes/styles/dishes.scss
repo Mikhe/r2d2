@@ -3,7 +3,7 @@
 .dish-list {
   display: flex;
   flex-wrap: wrap;
-  width: 978px;
+  width: 980px;
   justify-content: space-around;
   margin: 30px auto 0;
 
@@ -11,7 +11,7 @@
     text-align: center;
   }
 
-  &-item {
+  &__item {
     display: flex;
     background: map_get($colors, white);
     flex-direction: column;
@@ -26,34 +26,35 @@
       border-radius: 10px;
     }
 
-    &-content {
+    &__content {
       display: flex;
     }
 
-    &-container {
+    &__container {
       padding: 20px 30px 8px 15px;
       width: 246px;
     }
 
-    &-sticker {
+    &__sticker {
       width: 15px;
       height: 4px;
       margin-top: 52px;
       background-color: map_get($colors, orange);
     }
 
-    &-head {
+    &__head {
       display: flex;
       justify-content: space-between;
       font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: -0.39px;
     }
 
-    &-body {
+    &__body {
       margin-top: 10px;
     }
 
-    &-title {
+    &__title {
       font-size: 17px;
       font-weight: bold;
       height: 66px;
@@ -63,9 +64,10 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       line-height: 21px;
+      letter-spacing: -0.89px;
     }
 
-    &-description {
+    &__description {
       margin-top: 20px;
       font-size: 14px;
       height: 54px;
@@ -74,29 +76,68 @@
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      letter-spacing: -0.61px;
     }
 
-    &-footer {
+    &__footer {
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
     }
 
-    &-price {
+    &__price {
       display: flex;
       font-size: 17px;
+      letter-spacing: -0.61px;
 
-      &-currency {
+      &__currency {
         font-size: 14px;
-        margin-top: 5px;
+        margin-top: 4px;
       }
     }
 
-    &-people {
+    &__people {
       font-size: 14px;
       width: 55px;
       text-align: right;
       line-height: 22px;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  &__category {
+    display: flex;
+    margin-top: 53px;
+    padding-left: 221px;
+
+    &__sticker {
+      width: 9px;
+      height: 50px;
+      background-color: map_get($colors, orange);
+      margin-right: 10px;
+    }
+
+    &__stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: -7px;
+      letter-spacing: -1.07px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      line-height: 38px;
+      letter-spacing: -0.71px;
+    }
+
+    &__add-dish {
+      margin-left: 1003px;
+      margin-top: -42px;
     }
   }
 }

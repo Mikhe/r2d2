@@ -15,9 +15,10 @@
 
   &__title {
     color: map-get($colors, white);
-    padding-top: 66px;
+    padding-top: 64px;
     font-size: 50px;
     font-weight: bold;
+    letter-spacing: -1.79px;
   }
 
   &__bar {
@@ -38,6 +39,7 @@
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
+        letter-spacing: -0.43px;
 
         &_active {
           background-color: $navigationActiveLink;

@@ -1,7 +1,8 @@
 import React from 'react';
 import {createCn} from 'bem-react-classname';
 
-import Logo from '../../assets/images/logo.svg';
+import LogoBlack from '../../assets/images/logo_black.svg';
+import Logo from '../../assets/images/logo.png';
 import Search from '../../assets/icons/search.png';
 import { Input, Link } from '../../uikit';
 import HeaderBarLink from './header-bar-link';
@@ -11,12 +12,18 @@ import { dishesStore } from '../../stores/dishes.store';
 function HeaderBar({ navigationItems, className, stick }) {
     const { searchDish } = dishesStore;
     const cn = createCn(className);
-    const color = stick ? 'black' : 'white';
+    let color = 'white';
+    let logoSrc = Logo;
+
+    if (stick) {
+        color = 'black';
+        logoSrc = LogoBlack;
+    }
 
     return (
         <div className={cn()}>
             <Link href="#">
-                <img src={Logo}/>
+                <img src={logoSrc}/>
             </Link>
 
             <nav className={cn('navigation')}>

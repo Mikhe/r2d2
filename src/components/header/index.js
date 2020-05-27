@@ -9,7 +9,7 @@ import HeaderBar from './header-bar';
 function Header({ navigationItems }) {
     const cn = createCn('header');
     const scrollY = useScrollPosition(30);
-    const stick = scrollY > 50;
+    const stick = scrollY > 300;
 
     return (
         <header className={cn({ stick })}>
