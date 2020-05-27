@@ -9,6 +9,10 @@
   font-weight: bold;
 }
 
+html {
+  margin-left: calc(100vw - 100%);
+}
+
 body {
   margin: 0;
   font-family: 'SerifPro', 'Roboto', 'Oxygen',
