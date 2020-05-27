@@ -3,9 +3,13 @@
 .dish-list {
   display: flex;
   flex-wrap: wrap;
-  width: 957px;
-  justify-content: space-between;
+  width: 978px;
+  justify-content: space-around;
   margin: 30px auto 0;
+
+  &-empty {
+    text-align: center;
+  }
 
   &-item {
     display: flex;
