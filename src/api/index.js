@@ -132,6 +132,8 @@ class API {
                         searchBy.some(keyword => {
                             return match = ingredient.name.toLocaleLowerCase().includes(keyword);
                         });
+
+                        return match;
                     }).length
                 }));
             }, timeout);
