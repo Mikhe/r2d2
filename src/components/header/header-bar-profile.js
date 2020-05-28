@@ -14,7 +14,7 @@ function HeaderBarProfile({ className, color }) {
             <Link href="#" color={color}>
                 John C.
             </Link>
-            <Icon src={icon} width={18} height={20} />
+            <Icon src={icon} width={24} height={24} />
         </div>
     );
 }
