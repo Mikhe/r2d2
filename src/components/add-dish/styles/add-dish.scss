@@ -1,0 +1,45 @@
+@import '../../../styles/colors';
+
+.add-dish-modal {
+  &__header {
+    width: 634px;
+    padding: 97px 163px 22px;
+    background: map_get($colors, smokewhite);
+    border-radius: 5px;
+    position: relative;
+
+    &_hasBackground {
+      background: none;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: -1.07px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    letter-spacing: -0.71px;
+    margin-bottom: 108px;
+  }
+
+  &__upload {
+    width: 960px;
+    height: 314px;
+    position: absolute;
+  }
+
+  &__link {
+    > span {
+      opacity: 0.6;
+    }
+
+    &_hasBackground {
+      > span {
+        opacity: 1;
+      }
+    }
+  }
+}

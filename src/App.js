@@ -3,6 +3,7 @@ import React from 'react';
 import './styles/app.scss';
 import Header from './components/header';
 import Dishes from './components/dishes';
+import AddDishModal from './components/add-dish';
 
 const navigationItems = [
     { page: 'Our Restaurant', active: false },
@@ -16,6 +17,7 @@ function App() {
             <main className="main">
                 <Header navigationItems={navigationItems} />
                 <Dishes />
+                <AddDishModal />
             </main>
         </div>
     );

@@ -10,6 +10,7 @@ export class DishesStore {
     foundDishes = [];
     searchBy = '';
     isLoading = false;
+    isAddDishModalOpen = false;
 
     constructor() {
         autorun(() => this.fetchDishes());
@@ -59,6 +60,14 @@ export class DishesStore {
             this.isLoading = false;
         }
     }, 500);
+
+    closeAddDishModal = () => {
+        this.isAddDishModalOpen = false;
+    };
+
+    openAddDishModal = () => {
+        this.isAddDishModalOpen = true;
+    };
 }
 
 decorate(DishesStore, {
@@ -66,8 +75,11 @@ decorate(DishesStore, {
     foundDishes: observable,
     searchBy: observable,
     isLoading: observable,
+    isAddDishModalOpen: observable,
     fetchDishes: action,
     searchDish: action,
+    closeAddDishModal: action,
+    openAddDishModal: action,
 });
 
 export const dishesStore = new DishesStore();

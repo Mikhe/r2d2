@@ -22,8 +22,8 @@ function FileInput({ icon, text, className, onChange, color, accept }) {
     };
 
     return (
-        <div className={cn({ icon: !!icon })}>
-            <input type="file" className={className} onChange={handleChange} accept={accept} ref={inputRef} />
+        <div className={`${cn({ icon: !!icon })} ${className}`}>
+            <input type="file" onChange={handleChange} accept={accept} ref={inputRef} />
             <span className={cn('text', { color })} onClick={handleClick}>{text}</span>
 
             {icon && (

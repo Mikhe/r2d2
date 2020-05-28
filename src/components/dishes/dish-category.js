@@ -1,10 +1,13 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 import { createCn } from 'bem-react-classname';
 
 import Plus from '../../assets/icons/plus.png';
 import Button from '../../uikit/button';
+import {dishesStore} from '../../stores/dishes.store';
 
-function DishCategory({ className }) {
+const DishCategory = observer(({ className }) => {
+    const { openAddDishModal } = dishesStore;
     const cn = createCn(className);
 
     return (
@@ -22,9 +25,10 @@ function DishCategory({ className }) {
                 text="Add a new dish"
                 icon={Plus}
                 color="orange"
+                onClick={openAddDishModal}
             />
         </>
     );
-}
+});
 
 export default DishCategory;
