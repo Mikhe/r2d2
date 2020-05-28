@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+
+.fileinput {
+  > input {
+    display: none;
+  }
+
+  &_icon {
+    display: flex;
+
+    > img {
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    @include color-modifiers;
+
+    opacity: 0.6;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: -0.43px;
+    align-self: center;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
