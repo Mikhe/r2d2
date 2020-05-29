@@ -34,7 +34,7 @@ const AddDishModal = observer(() => {
                         <FileInput
                             className={cn('link', { hasBackground })}
                             icon={hasBackground ? Camera : CameraBlack}
-                            text="Add a photo"
+                            text={hasBackground ? 'Change the photo' : 'Add a photo'}
                             color={hasBackground ? 'white' : 'grey'}
                             accept="image/*"
                             onChange={updateFile}
