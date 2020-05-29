@@ -1,0 +1,40 @@
+@import '../../styles/colors';
+
+$size: 48px;
+$border-width: 1px;
+$border-radius: 5px;
+$padding: 12px;
+
+.select {
+  > select {
+    width: 100%;
+    border-radius: $border-radius;
+    height: calc(#{$size - #{$border-width} * 2});
+    border: 1px solid $border;
+    padding: $padding 20px;
+    outline: none;
+    font-size: 17px;
+    color: $placeholder;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:invalid {
+      opacity: 0.6;
+      font-size: 17px;
+      color: $placeholder;
+      letter-spacing: -0.43px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 18px;
+    margin-top: 12px;
+    margin-left: -40px;
+    background: url('../../assets/icons/chevron-down.png');
+  }
+}
