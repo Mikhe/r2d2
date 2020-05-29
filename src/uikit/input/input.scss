@@ -2,13 +2,17 @@
 
 $size: 24px;
 $border-width: 1px;
+$border-radius: 5px;
+$padding: 12px;
 
 .input {
+  display: flex;
+
   > input {
-    border-radius: 5px;
+    border-radius: $border-radius;
     height: calc(#{$size - #{$border-width} * 2});
     border: 1px solid $border;
-    padding: 12px 20px;
+    padding: $padding 20px;
     outline: none;
     font-size: 17px;
     color: $placeholder;
@@ -22,28 +26,39 @@ $border-width: 1px;
     > img {
       position: relative;
       left: -45px;
-      top: 6px;
+      align-self: center;
     }
   }
 
-  ::-webkit-input-placeholder {
-    opacity: 0.6;
-    font-size: 17px;
-    color: $placeholder;
-    letter-spacing: -0.43px;
+  &_subplaceholder {
+    > input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      flex: auto;
+    }
   }
-  ::-moz-placeholder {
+
+  &__subplaceholder {
     opacity: 0.6;
-    font-size: 17px;
-    color: $placeholder;
+    font-size: 14px;
+    color: #262626;
     letter-spacing: -0.43px;
+    line-height: 48px;
+    padding-right: 20px;
+    text-align: right;
+    height: calc(#{$size + $padding * 2 - $border-width * 2});
+    border: 1px solid $border;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-left: 0;
   }
-  :-ms-input-placeholder {
-    opacity: 0.6;
-    font-size: 17px;
-    color: $placeholder;
-    letter-spacing: -0.43px;
-  }
+
+  ::-webkit-input-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder,
   :-moz-placeholder {
     opacity: 0.6;
     font-size: 17px;
