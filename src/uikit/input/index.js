@@ -5,7 +5,7 @@ import './input.scss';
 import { Icon } from '../index';
 
 function Input({ type, icon, placeholder, className, onChange, subplaceholder, maxLength }) {
-    const cn = createCn('input');
+    const cn = createCn('input', className);
     const handleChange = (e) => {
         onChange && onChange(e.target.value);
     };
@@ -15,7 +15,6 @@ function Input({ type, icon, placeholder, className, onChange, subplaceholder, m
             <input
                 type={type}
                 placeholder={placeholder}
-                className={className}
                 maxLength={maxLength}
                 onChange={handleChange}
             />

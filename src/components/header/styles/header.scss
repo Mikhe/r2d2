@@ -69,7 +69,9 @@
     }
 
     &__search {
-      width: 238px;
+      > input {
+        width: 238px;
+      }
     }
 
     &__stack {
