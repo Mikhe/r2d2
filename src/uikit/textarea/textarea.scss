@@ -1,0 +1,57 @@
+@import '../../styles/colors';
+
+$size: 24px;
+$border-width: 1px;
+$border-radius: 5px;
+$padding: 12px;
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+
+  > textarea {
+    font-family: SerifPro;
+    border-radius: $border-radius;
+    border: 1px solid $border;
+    padding: $padding 20px;
+    outline: none;
+    font-size: 17px;
+    color: map_get($colors, black);
+    resize: none;
+
+    &::placeholder {
+      font-family: SerifPro;
+      opacity: 0.6;
+      font-size: 17px;
+      color: $placeholder;
+      letter-spacing: -0.43px;
+    }
+  }
+
+  &_subplaceholder {
+    > textarea {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__subplaceholder {
+    opacity: 0.6;
+    font-size: 14px;
+    color: #262626;
+    letter-spacing: -0.43px;
+    line-height: 48px;
+    padding-right: 20px;
+    text-align: right;
+    height: 38px;
+    line-height: 30px;
+    border: 1px solid $border;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: $border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: $border-radius;
+    border-top: 0;
+  }
+}

@@ -4,6 +4,7 @@ import Icon from './icon';
 import ModalComponent from './modal';
 import FileInput from './fileinput';
 import Select from './select';
+import TextArea from './textarea';
 
 export {
     Link,
@@ -11,5 +12,6 @@ export {
     Icon,
     ModalComponent as Modal,
     FileInput,
-    Select
+    Select,
+    TextArea,
 }
