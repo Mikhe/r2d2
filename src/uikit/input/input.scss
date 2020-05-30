@@ -9,13 +9,22 @@ $padding: 12px;
   display: flex;
 
   > input {
+    font-family: SerifPro;
     border-radius: $border-radius;
     height: calc(#{$size - #{$border-width} * 2});
     border: 1px solid $border;
     padding: $padding 20px;
     outline: none;
     font-size: 17px;
-    color: $placeholder;
+    color: map_get($colors, black);
+
+    &::placeholder {
+      font-family: SerifPro;
+      opacity: 0.6;
+      font-size: 17px;
+      color: $placeholder;
+      letter-spacing: -0.43px;
+    }
   }
 
   &_icon {
@@ -54,15 +63,5 @@ $padding: 12px;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     border-left: 0;
-  }
-
-  ::-webkit-input-placeholder,
-  ::-moz-placeholder,
-  :-ms-input-placeholder,
-  :-moz-placeholder {
-    opacity: 0.6;
-    font-size: 17px;
-    color: $placeholder;
-    letter-spacing: -0.43px;
   }
 }
