@@ -3,8 +3,8 @@ import { createCn } from 'bem-react-classname';
 
 import './select.scss';
 
-function Select({ options, onChange, placeholder }) {
-    const cn = createCn('select');
+function Select({ options, onChange, placeholder, className }) {
+    const cn = createCn('select', className);
     const handleChange = (e) => {
         onChange && onChange(e.target.value);
     };
