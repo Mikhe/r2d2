@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { createCn } from 'bem-react-classname';
 
 import './fileinput.scss';
-import { Icon } from '../index';
 
 function FileInput({ icon, text, className, onChange, color, accept }) {
     const cn = createCn('fileinput');
@@ -27,7 +26,7 @@ function FileInput({ icon, text, className, onChange, color, accept }) {
             <span className={cn('text', { color })} onClick={handleClick}>{text}</span>
 
             {icon && (
-                <Icon src={icon} width={24} height={24} />
+                <div className={cn('icon', { icon, color: 'black' })} />
             )}
         </div>
     );

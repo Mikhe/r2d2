@@ -1,8 +1,18 @@
 @import '../../styles/colors';
+@import '../styles/icons';
 
 .fileinput {
   > input {
     display: none;
+  }
+
+  &__icon {
+    @include background-modifiers;
+    @include icons-modifiers;
+
+    width: 24px;
+    height: 24px;
+    margin-left: 13px;
   }
 
   &_icon {
