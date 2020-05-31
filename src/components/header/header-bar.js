@@ -3,7 +3,6 @@ import {createCn} from 'bem-react-classname';
 
 import LogoBlack from '../../assets/images/logo_black.svg';
 import Logo from '../../assets/images/logo.png';
-import Search from '../../assets/icons/search.png';
 import { Input, Link } from '../../uikit';
 import HeaderBarLink from './header-bar-link';
 import HeaderBarProfile from './header-bar-profile';
@@ -40,7 +39,7 @@ function HeaderBar({ navigationItems, className, stick }) {
 
             <div className={cn('stack')}>
                 <Input
-                    icon={Search}
+                    icon="search"
                     placeholder="Try « Chicken cotoletta »"
                     className={cn('search')}
                     onChange={searchDish}

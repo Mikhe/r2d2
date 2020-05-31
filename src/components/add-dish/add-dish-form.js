@@ -2,9 +2,7 @@ import React from 'react';
 import {createCn} from 'bem-react-classname';
 
 import { Button, Icon, Input, Select, TextArea } from '../../uikit';
-import PlusOrange from '../../assets/icons/plus_orange.svg';
 import Menu from '../../assets/icons/menu.svg';
-import PlusBlack from '../../assets/icons/plus_black.svg';
 
 const categories = [
     { text: 'Meat', value: 1 },
@@ -40,7 +38,7 @@ const AddDishForm = ({ className }) => {
                         className={cn('ingredients-add-new')}
                         link={true}
                         text="Add a new ingredients"
-                        icon={PlusOrange}
+                        icon="plus"
                         color="orange"
                     />
                 </div>
@@ -49,7 +47,7 @@ const AddDishForm = ({ className }) => {
                     <div className={cn('ingredients-list-item')}>
                         <Icon src={Menu} className={cn('ingredients-list-item-menu')}/>
                         <Input
-                            icon={PlusBlack}
+                            icon="plus"
                             className={cn('ingredients-list-item-ingredient-name')}
                             placeholder="Ingredient name"
                         />
