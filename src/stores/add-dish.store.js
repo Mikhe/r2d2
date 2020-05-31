@@ -1,6 +1,6 @@
-import {action, computed, decorate, observable} from 'mobx';
+import { action, computed, decorate, observable } from 'mobx';
 
-const emptyIngredients = {
+export const emptyIngredient = {
     name: '',
     kcl: '',
 };
@@ -42,7 +42,7 @@ export class AddDishStore {
     };
 
     get isValid() {
-        const { file, title, description, category } = this.form; console.log(this.form)
+        const { file, title, description, category } = this.form;
 
         if (!file || !title || !description || !category) {
             return false;
@@ -54,7 +54,7 @@ export class AddDishStore {
     addNewIngredient = () => {
         if (this.ingredientsAreValid()) {
             this.ingredientId += 1;
-            this.ingredients.set(this.ingredientId, emptyIngredients);
+            this.ingredients.set(this.ingredientId, emptyIngredient);
         }
     };
 
@@ -76,7 +76,7 @@ export class AddDishStore {
         if (this.ingredients.size !== 1) {
             this.ingredients.delete(id);
         } else {
-            this.ingredients.set(id, emptyIngredients);
+            this.ingredients.set(id, emptyIngredient);
         }
     };
 }
