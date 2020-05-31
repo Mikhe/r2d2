@@ -14,6 +14,10 @@ $border-radius: 5px;
 
     &_hasBackground {
       background: none;
+
+      .fileinput__icon {
+        background: map_get($colors, white);
+      }
     }
 
     &__title {

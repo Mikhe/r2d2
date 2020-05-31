@@ -3,8 +3,6 @@ import { observer } from 'mobx-react';
 import {createCn} from 'bem-react-classname';
 
 import { FileInput } from '../../uikit';
-import Camera from '../../assets/icons/camera.svg';
-import CameraBlack from '../../assets/icons/camera_black.svg';
 import { addDishStore } from '../../stores/add-dish.store';
 
 const AddDishHeader = observer(({ className }) => {
@@ -26,7 +24,7 @@ const AddDishHeader = observer(({ className }) => {
                 <div className={cn('photo')}>
                     <FileInput
                         className={cn('link', { hasBackground })}
-                        icon={hasBackground ? Camera : CameraBlack}
+                        icon="camera"
                         text={hasBackground ? 'Change the photo' : 'Add a photo'}
                         color={hasBackground ? 'white' : 'grey'}
                         accept="image/*"
