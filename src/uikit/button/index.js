@@ -4,11 +4,11 @@ import { createCn } from 'bem-react-classname';
 import './button.scss';
 import { Icon } from '../index';
 
-function Button({ text, icon, className, onClick, color }) {
+function Button({ text, icon, className, onClick, color, link }) {
     const cn = createCn('button', className);
 
     return (
-        <button className={cn({ icon: !!icon, color: color })} onClick={onClick}>
+        <button className={cn({ icon: !!icon, color, link, withBg: !link })} onClick={onClick}>
             {text || ''}
 
             {icon && (

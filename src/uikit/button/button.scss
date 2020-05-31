@@ -2,9 +2,10 @@
 
 @mixin button-color-modifiers {
   @each $name, $hex in $colors {
-    &_color_#{$name} {
+    &_withBg.button_color_#{$name} {
       @if $name == orange {
         color: map_get($colors, white);
+
       } @else {
         color: map_get($colors, black);
       }
@@ -15,6 +16,7 @@
 .button {
   @include background-modifiers;
   @include button-color-modifiers;
+  @include color-modifiers;
 
   outline: none;
   border-radius: 5px;
@@ -41,5 +43,11 @@
 
   &:active {
     opacity: 0.9;
+  }
+
+  &_link {
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
