@@ -3,17 +3,19 @@
 $size: 24px;
 $border-width: 1px;
 $border-radius: 5px;
-$padding: 12px;
+$padding-y: 12px;
+$padding-x: 20px;
 
 .input {
   display: flex;
 
   > input {
     font-family: SerifPro;
+    width: calc(100% - #{$padding-x} * 2);
     border-radius: $border-radius;
     height: calc(#{$size - #{$border-width} * 2});
     border: 1px solid $border;
-    padding: $padding 20px;
+    padding: $padding-y $padding-x;
     outline: none;
     font-size: 17px;
     color: map_get($colors, black);
@@ -56,12 +58,13 @@ $padding: 12px;
     line-height: 48px;
     padding-right: 20px;
     text-align: right;
-    height: calc(#{$size + $padding * 2 - $border-width * 2});
+    height: calc(#{$size + $padding-y * 2 - $border-width * 2});
     border: 1px solid $border;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     border-left: 0;
+    white-space: nowrap;
   }
 }

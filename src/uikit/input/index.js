@@ -4,7 +4,7 @@ import { createCn } from 'bem-react-classname';
 import './input.scss';
 import { Icon } from '../index';
 
-function Input({ type, icon, placeholder, className, onChange, subplaceholder, maxLength }) {
+function Input({ icon, placeholder, className, onChange, subplaceholder, maxLength }) {
     const cn = createCn('input', className);
     const handleChange = (e) => {
         onChange && onChange(e.target.value);
@@ -13,7 +13,7 @@ function Input({ type, icon, placeholder, className, onChange, subplaceholder, m
     return (
         <div className={cn({ icon: !!icon, subplaceholder: !!subplaceholder })}>
             <input
-                type={type}
+                type="text"
                 placeholder={placeholder}
                 maxLength={maxLength}
                 onChange={handleChange}
