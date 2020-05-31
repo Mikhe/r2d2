@@ -1,11 +1,11 @@
 import React from 'react';
 import {createCn} from 'bem-react-classname';
 
-function Icon({ src, width, height }) {
-    const cn = createCn('icon');
+function Icon({ src, width, height, className }) {
+    const cn = createCn('icon', className);
 
     return (
-        <img src={src} style={{ width, height }} className={cn()} />
+        <img src={src} style={{ width: width || 24, height: height || 24 }} className={cn()} />
     );
 }
 
