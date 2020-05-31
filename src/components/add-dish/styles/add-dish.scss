@@ -53,7 +53,7 @@ $border-radius: 5px;
   }
 
   &__form {
-    padding: 32px $padding 136px;
+    padding: 32px $padding 126px;
     background: map_get($colors, white);
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
@@ -79,22 +79,64 @@ $border-radius: 5px;
       &-list {
         margin-top: 8px;
 
-        &-item {
+        &__item {
           display: flex;
+          margin-bottom: 10px;
 
-          &-menu {
+          &__trash {
+            align-self: center;
+            margin-left: 10px;
+          }
+
+          &__menu {
             align-self: center;
             margin-right: 10px;
           }
 
-          &-ingredient-name {
+          &__ingredient-name {
             flex-grow: 1;
           }
 
-          &-ingredient-weight {
+          &__ingredient-weight {
             width: 143px;
+
+            &_valid {
+              width: 109px;
+            }
           }
         }
+
+        &__summary {
+          display: flex;
+          justify-content: space-between;
+          background: map_get($colors, white);
+          margin-top: 35px;
+          font-size: 17px;
+          letter-spacing: -0.43px;
+        }
+      }
+    }
+
+    &_isValid {
+      padding-bottom: 10px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    padding: 8px 59px 8px 350px;
+    justify-content: space-between;
+    background: map_get($colors, orange);
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+
+    &__add-new-dish {
+      letter-spacing: -0.43px;
+
+      &-icon {
+        align-self: center;
       }
     }
   }

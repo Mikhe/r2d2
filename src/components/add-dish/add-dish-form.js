@@ -2,8 +2,9 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import {createCn} from 'bem-react-classname';
 
-import { Button, Icon, Input, Select, TextArea } from '../../uikit';
-import { addDishStore } from "../../stores/add-dish.store";
+import { Button, Input, Select, TextArea } from '../../uikit';
+import { addDishStore } from '../../stores/add-dish.store';
+import AddDishFormIngredients from './add-dish-form-ingredients';
 
 const categories = [
     { text: 'Meat', value: 1 },
@@ -11,11 +12,11 @@ const categories = [
 ];
 
 const AddDishForm = observer(({ className }) => {
-    const { updateData } = addDishStore;
+    const { updateData, addNewIngredient, isValid } = addDishStore;
     const cn = createCn(className);
 
     return (
-        <div className={cn()}>
+        <div className={cn({ isValid })}>
             <Input
                 name="title"
                 placeholder="Dish name"
@@ -24,7 +25,13 @@ const AddDishForm = observer(({ className }) => {
                 onChange={updateData}
             />
 
-            <Select placeholder="Select a dish category" options={categories} className={cn('row')} />
+            <Select
+                name="category"
+                placeholder="Select a dish category"
+                options={categories}
+                className={cn('row')}
+                onChange={updateData}
+            />
 
             <TextArea
                 name="description"
@@ -45,23 +52,11 @@ const AddDishForm = observer(({ className }) => {
                         text="Add a new ingredients"
                         icon="plus"
                         color="orange"
+                        onClick={addNewIngredient}
                     />
                 </div>
 
-                <div className={cn('ingredients-list')}>
-                    <div className={cn('ingredients-list-item')}>
-                        <Icon name="menu" className={cn('ingredients-list-item-menu')}/>
-                        <Input
-                            icon="plus"
-                            className={cn('ingredients-list-item-ingredient-name')}
-                            placeholder="Ingredient name"
-                        />
-                        <Input
-                            className={cn('ingredients-list-item-ingredient-weight')}
-                            placeholder="Weight (Kcl)"
-                        />
-                    </div>
-                </div>
+                <AddDishFormIngredients className={cn('ingredients-list')} />
             </div>
         </div>
     );

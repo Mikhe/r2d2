@@ -7,6 +7,7 @@ import { dishesStore } from '../../stores/dishes.store';
 import { Modal } from '../../uikit';
 import AddDishHeader from './add-dish-header';
 import AddDishForm from './add-dish-form';
+import AddDishFooter from './add-dish-footer';
 
 const AddDishModal = observer(() => {
     const { isAddDishModalOpen, closeAddDishModal } = dishesStore;
@@ -21,6 +22,7 @@ const AddDishModal = observer(() => {
             <div className={cn()}>
                 <AddDishHeader className={cn('header')}/>
                 <AddDishForm className={cn('form')}/>
+                <AddDishFooter className={cn('footer')}/>
             </div>
         </Modal>
     );
