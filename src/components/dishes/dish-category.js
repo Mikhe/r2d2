@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { createCn } from 'bem-react-classname';
 
-import Plus from '../../assets/icons/plus.png';
+import Plus from '../../assets/icons/plus.svg';
 import Button from '../../uikit/button';
 import {dishesStore} from '../../stores/dishes.store';
 

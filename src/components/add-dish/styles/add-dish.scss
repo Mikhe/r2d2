@@ -1,34 +1,39 @@
 @import '../../../styles/colors';
 
+$padding: 163px;
+$border-radius: 5px;
+
 .add-dish-modal {
   &__header {
     width: 634px;
-    padding: 97px 163px 22px;
+    padding: 90px $padding 19px;
     background: map_get($colors, smokewhite);
-    border-radius: 5px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
     position: relative;
 
     &_hasBackground {
       background: none;
     }
-  }
 
-  &__title {
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: -1.07px;
-  }
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: -1.07px;
+      line-height: 50px;
+    }
 
-  &__subtitle {
-    font-size: 20px;
-    letter-spacing: -0.71px;
-    margin-bottom: 108px;
-  }
+    &__subtitle {
+      font-size: 20px;
+      letter-spacing: -0.71px;
+      margin-bottom: 106px;
+    }
 
-  &__upload {
-    width: 960px;
-    height: 314px;
-    position: absolute;
+    &__upload {
+      width: 960px;
+      height: 314px;
+      position: absolute;
+    }
   }
 
   &__link {
@@ -39,6 +44,53 @@
     &_hasBackground {
       > span {
         opacity: 1;
+      }
+    }
+  }
+
+  &__form {
+    padding: 32px $padding 136px;
+    background: map_get($colors, white);
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &__row {
+      margin-top: 10px;
+    }
+
+    &__ingredients {
+      margin-top: 10px;
+
+      &-header {
+        display: flex;
+        font-size: 20px;
+        letter-spacing: -0.71px;
+        justify-content: space-between;
+
+        &-title {
+          align-self: center;
+        }
+      }
+
+      &-list {
+        margin-top: 8px;
+
+        &-item {
+          display: flex;
+
+          &-menu {
+            align-self: center;
+            margin-right: 10px;
+          }
+
+          &-ingredient-name {
+            flex-grow: 1;
+          }
+
+          &-ingredient-weight {
+            width: 143px;
+          }
+        }
       }
     }
   }
