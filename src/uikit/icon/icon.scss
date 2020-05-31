@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../styles/icons';
+
+.icon {
+  &__icon {
+    @include background-modifiers;
+    @include icons-modifiers;
+
+    width: 24px;
+    height: 24px;
+  }
+}
