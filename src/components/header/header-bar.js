@@ -40,7 +40,6 @@ function HeaderBar({ navigationItems, className, stick }) {
 
             <div className={cn('stack')}>
                 <Input
-                    type="text"
                     icon={Search}
                     placeholder="Try « Chicken cotoletta »"
                     className={cn('search')}
