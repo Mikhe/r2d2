@@ -3,15 +3,16 @@ import { createCn } from 'bem-react-classname';
 
 import './textarea.scss';
 
-function TextArea({ placeholder, className, onChange, subplaceholder, maxLength, rows }) {
+function TextArea({ placeholder, className, onChange, subplaceholder, maxLength, rows, name }) {
     const cn = createCn('textarea');
     const handleChange = (e) => {
-        onChange && onChange(e.target.value);
+        onChange && onChange(e.target.value, name);
     };
 
     return (
         <div className={cn({ subplaceholder: !!subplaceholder })}>
             <textarea
+                name={name}
                 rows={rows}
                 placeholder={placeholder}
                 className={className}

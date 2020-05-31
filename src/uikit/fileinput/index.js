@@ -3,7 +3,7 @@ import { createCn } from 'bem-react-classname';
 
 import './fileinput.scss';
 
-function FileInput({ icon, text, className, onChange, color, accept }) {
+function FileInput({ icon, text, className, onChange, color, accept, name }) {
     const cn = createCn('fileinput');
     const inputRef = useRef(null);
     const handleClick = () => {
@@ -14,7 +14,7 @@ function FileInput({ icon, text, className, onChange, color, accept }) {
         const reader = new FileReader();
 
         reader.onload = (event) => {
-            onChange(event.target.result, file);
+            onChange(event.target.result, name, file);
         };
 
         reader.readAsDataURL(file);
@@ -22,7 +22,7 @@ function FileInput({ icon, text, className, onChange, color, accept }) {
 
     return (
         <div className={`${cn({ icon: !!icon })} ${className}`}>
-            <input type="file" onChange={handleChange} accept={accept} ref={inputRef} />
+            <input type="file" onChange={handleChange} accept={accept} ref={inputRef} name={name} />
             <span className={cn('text', { color })} onClick={handleClick}>{text}</span>
 
             {icon && (
