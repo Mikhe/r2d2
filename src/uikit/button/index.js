@@ -2,7 +2,6 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 import './button.scss';
-import { Icon } from '../index';
 
 function Button({ text, icon, className, onClick, color, link }) {
     const cn = createCn('button', className);
@@ -12,7 +11,7 @@ function Button({ text, icon, className, onClick, color, link }) {
             {text || ''}
 
             {icon && (
-                <Icon src={icon} width={24} height={24} />
+                <div className={cn('icon', { icon, color })} />
             )}
         </button>
     );

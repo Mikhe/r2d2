@@ -1,0 +1,12 @@
+$icons: (
+  plus: url('../../assets/icons/plus.svg'),
+  search: url('../../assets/icons/search.svg'),
+);
+
+@mixin icons-modifiers {
+  @each $name, $path in $icons {
+    &_icon_#{$name} {
+      mask-image: $path;
+    }
+  }
+}

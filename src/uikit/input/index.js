@@ -2,7 +2,6 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 import './input.scss';
-import { Icon } from '../index';
 
 function Input({ icon, placeholder, className, onChange, subplaceholder, maxLength }) {
     const cn = createCn('input', className);
@@ -20,7 +19,7 @@ function Input({ icon, placeholder, className, onChange, subplaceholder, maxLeng
             />
 
             {icon && (
-                <Icon src={icon} width={24} height={24} />
+                <div className={cn('icon', { icon, color: 'black' })} />
             )}
 
             {subplaceholder && <span className={cn('subplaceholder')}>{subplaceholder}</span>}

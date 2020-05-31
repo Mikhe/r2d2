@@ -1,10 +1,17 @@
 @import '../../styles/colors';
+@import '../styles/icons';
+
+$namespace: 'button';
 
 @mixin button-color-modifiers {
   @each $name, $hex in $colors {
-    &_withBg.button_color_#{$name} {
+    &_withBg.#{$namespace}_color_#{$name} {
       @if $name == orange {
         color: map_get($colors, white);
+
+        > .#{$namespace}__icon {
+          background: map_get($colors, white);
+        }
 
       } @else {
         color: map_get($colors, black);
@@ -13,7 +20,7 @@
   }
 }
 
-.button {
+.#{$namespace} {
   @include background-modifiers;
   @include button-color-modifiers;
   @include color-modifiers;
@@ -29,12 +36,17 @@
   letter-spacing: -1.02px;
   cursor: pointer;
 
+  &__icon {
+    @include background-modifiers;
+    @include icons-modifiers;
+
+    width: 24px;
+    height: 24px;
+    margin-left: 13px;
+  }
+
   &_icon {
     padding: 12px 24px 12px 30px;
-
-    .icon {
-      padding-left: 14px;
-    }
   }
 
   &:hover {
