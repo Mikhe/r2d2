@@ -1,16 +1,16 @@
 import { action, decorate, observable } from 'mobx';
 
 export class AddDishStore {
-    file = null;
+    form = {};
 
-    updateFile = (file) => {
-        this.file = file;
+    updateData = (value, prop) => {
+        this.form[prop] = value;
     }
 }
 
 decorate(AddDishStore, {
-    file: observable,
-    updateFile: action,
+    form: observable,
+    updateData: action,
 });
 
 export const addDishStore = new AddDishStore();

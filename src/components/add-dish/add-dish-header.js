@@ -6,7 +6,8 @@ import { FileInput } from '../../uikit';
 import { addDishStore } from '../../stores/add-dish.store';
 
 const AddDishHeader = observer(({ className }) => {
-    const { file, updateFile } = addDishStore;
+    const { form, updateData } = addDishStore;
+    const { file, title, description } = form;
     const hasBackground = !!file;
     const cn = createCn(className);
 
@@ -17,18 +18,19 @@ const AddDishHeader = observer(({ className }) => {
             )}
 
             <div className={cn({ hasBackground })}>
-                <div className={cn('title')}>Add a new dish</div>
+                <div className={cn('title')}>{title || 'Add a new dish'}</div>
                 <div className={cn('subtitle')}>
-                    Please enter all informations about your new dish
+                    {description || 'Please enter all informations about your new dish'}
                 </div>
                 <div className={cn('photo')}>
                     <FileInput
+                        name="file"
                         className={cn('link', { hasBackground })}
                         icon="camera"
                         text={hasBackground ? 'Change the photo' : 'Add a photo'}
                         color={hasBackground ? 'white' : 'grey'}
                         accept="image/*"
-                        onChange={updateFile}
+                        onChange={updateData}
                     />
                 </div>
             </div>
